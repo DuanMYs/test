@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-tp></my-tp>
+    </div>
+
+
+    <script id="tp"  type="x-template" >
+        <div>
+            <h1 @click="show">我的第{{msg}}个组件</h1>
+
+        </div>
+    </script>
+
+
+    <script>
+        
+        Vue.component("myTp",{
+            template:'#tp',
+            data: function (){
+                return {msg:1}
+            },
+            methods:{
+                show :function (){
+                    this.msg++;
+                   console.log("dsfew")
+                }
+            }
+
+        });
+
+        new Vue({
+            el:'#app',
+            data:{
+                msg:1,
+
+            },
+            methods:{
+
+            },
+           
+        })
+
+
+    </script>
+</body>
+</html>

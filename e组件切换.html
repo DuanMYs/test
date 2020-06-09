@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>    
+</head>
+<body>
+    <div id="app">
+        <a @click.prevent="msg='etemp'" href="#">dl</a>
+        <a @click.prevent="msg='etemo'" href="#">zc</a>
+    
+    <hr>
+    <component v-bind:is="msg"></component>
+    </div>
+    <template id="tp">
+        <div>
+            <form>
+                ID:<input type="text"><br>
+                password:<input type="password" name="" id=""><br>
+                <input type="submit" value="dl">
+            </form>
+        </div>
+    </template>
+    <template id="tp02">
+        <div>
+            <form>
+                ID:<input type="text"><br>
+                password:<input type="password" name="" id=""><br>
+                queryPw:<input type="password" name="" id=""><br>
+                <input type="submit" value="zc">
+            </form>
+        </div>
+    </template>
+    <script>
+        var temp01 = {
+            template:'#tp',
+            data: function (){
+                return {
+                   
+                }
+            },
+            methods:{
+               
+            }
+        }
+        var temp02 = {
+            template:'#tp02',
+            data: function (){
+                return {
+                   
+                }
+            },
+            methods:{
+                
+            }
+        }
+
+        new Vue({
+            el:'#app',
+            data:{
+                msg:''
+            },
+            methods:{
+
+            },
+            components:{
+                etemp:temp01,
+                etemo:temp02,
+            }
+
+        })
+    </script>
+</body>
+</html>
